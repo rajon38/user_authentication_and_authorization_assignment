@@ -44,7 +44,9 @@ export async function LoginRequest(email,password){
         let URL = BaseURL+"/login";
         let PostBody = {"email":email, "password":password};
         let res = await axios.post(URL,PostBody);
+        debugger
         setToken(res.data['token']);
+        debugger
         setUserDetails(res.data['data']);
         SuccessToast("Login Success");
         store.dispatch(HideLoader());

@@ -1,18 +1,17 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useRef} from "react";
 import {Container,Navbar} from "react-bootstrap";
 import logo from "../../Assets/Images/logo.svg";
 import { removeSessions} from "../../Helper/SessionHelper";
 
 
 
-const MasterLayout = () => {
+const MasterLayout = (props) => {
+
+    let contentRef = useRef();
 
     const onLogout=()=>{
         removeSessions();
     }
-
-
-
 
 
     return (
@@ -34,6 +33,9 @@ const MasterLayout = () => {
                 </Container>
             </Navbar>
 
+            <div ref={(div) => (contentRef = div)} className="content">
+                {props.children}
+            </div>
 
         </Fragment>
     );

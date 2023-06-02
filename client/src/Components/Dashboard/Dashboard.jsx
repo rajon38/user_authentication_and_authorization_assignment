@@ -12,8 +12,8 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async ()=>{
             try {
-                const res = await getProtectedData();
-                setData(res);
+                const result = await getProtectedData();
+                setData(result);
             } catch (e) {
                 dispatch(setAuthenticated(false));
             }
@@ -21,12 +21,14 @@ const Dashboard = () => {
         fetchData();
     },[]);
 
-    if (!isAuthenticated){
-        ErrorToast("You are not Authenticated. Please log in")
-    }
+
 
     if(!data){
         return <div>Loading...</div>
+    }
+
+    if (!isAuthenticated){
+        ErrorToast("You are not Authenticated. Please log in")
     }
     return (
         <Fragment>
@@ -37,7 +39,7 @@ const Dashboard = () => {
                             <div className="card-body">
                                 <h3>Welcome to the Dashboard</h3>
                                 <br/>
-                                <p>User-specific content: {data}</p>
+                                <p>User-specific content: {data.message}</p>
                             </div>
                         </div>
                     </div>

@@ -12,17 +12,17 @@ export async function getProtectedData(){
     try {
         store.dispatch(ShowLoader());
         let URL = BaseURL + "/protected";
-        let res = await axios.get(URL,AxiosHeader);
+        let result = await axios.get(URL,AxiosHeader);
         store.dispatch(HideLoader());
-
-        if (res.status === 200 && res.data['status'] === "success") {
+        if (result.status === 200 ) {
             SuccessToast("Request Successful");
             store.dispatch(setAuthenticated(true))
-            return  res.data;
+            return  result.data;
         }
     }catch (e) {
         store.dispatch(HideLoader());
         ErrorToast("Something Went Wrong");
+        store.dispatch(setAuthenticated(false))
         return e;
     }
 }

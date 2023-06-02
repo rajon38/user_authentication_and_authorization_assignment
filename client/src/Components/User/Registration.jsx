@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {ErrorToast, IsEmail, IsEmpty} from "../../Helper/FromHelper";
 import {RegistrationRequest} from "../../APIRequest/UsersAPI";
 
@@ -53,6 +53,7 @@ const Registration = () => {
                             <div className="row m-0  p-0">
                                 <div className="col-md-4 text-start p-2">
                                     <button onClick={onRegistration} className="btn w-100 mt-2 btn-success">Complete</button>
+                                    <Link className="text-center ms-3 h5" to="/login">Sign In</Link>
                                 </div>
                             </div>
                         </div>
