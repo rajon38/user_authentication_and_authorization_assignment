@@ -1,0 +1,23 @@
+=>How to run the program,
+
+GitHub link =  https://github.com/rajon38/user_authentication_and_authorization_assignment.git
+
+1. Download this repository code as a zip file. Extract the file,
+
+2. Run the project in VSCode/WebStrom platform,
+
+3. To run the Backend side, Open a terminal and type "cd server"
+
+4. Then type "npm i" to install necessary packages.
+
+5. Then type "npm run dev", the server will run into 8080 port.
+
+6. To run the Backend side, Open a terminal and type "cd client"
+
+7. Then type "npm i" to install necessary packages.
+
+8. Then type "npm run dev", the server will run into 3000 port.
+
+Postman link = https://documenter.getpostman.com/view/24585156/2s93sW8F7x
+
+Live Link =
