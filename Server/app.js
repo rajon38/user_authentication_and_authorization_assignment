@@ -51,4 +51,10 @@ app.use("*",(req,res)=>{
     res.status(404).json({status:"fail", data:"Not Found"})
 })
 
+// Add React Front End Routing
+app.get('*',function (req,res) {
+    res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+})
+
+
 module.exports = app;
